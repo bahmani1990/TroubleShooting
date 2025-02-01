@@ -1,0 +1,244 @@
+/* You can add global styles to this file, and also import other style files */
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html{
+    height: 100vh;
+}
+body{
+    width: 100%;
+    height: 100%;
+    font-family: 'IRANSansWeb','Vazir',Arial, Helvetica, sans-serif;
+    padding: 3px;
+
+
+}
+router-outlet{
+    height: 100%;
+    width: 100%;
+}
+app-root{
+    height: 100%;
+}
+app-questions{
+    height: 100%;
+
+}
+@font-face {
+    font-family: 'IRANSansWeb';
+    src: url(./assets/fonts/IRANSansWeb\ Medium\ Regular.woff2) format('woff2'),
+    url(./assets/fonts/IRANSansWeb\ Medium\ Regular.woff) format('woff'),
+    url(./assets/fonts/IRANSansWeb\ Medium\ Regular.ttf) format('ttf');
+    font-weight: normal;
+    font-style: normal;
+    ;
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+div>.search:focus{
+    border-color: #ccc !important;
+    box-shadow: none !important;
+}
+
+select,input:focus{
+    box-shadow:none !important;
+    outline: 0 !important;
+   border-color: #dee2e6 !important;
+}
+input::placeholder{
+    color:#CBCBCB !important;
+    font-size: 1vw;
+}
+input.search{
+    outline: 0 !important;
+    border: 0 !important;
+    height: 4vh
+}
+
+input.search:focus{
+outline: 0 !important;
+border: 0 !important;
+}
+
+
+.hsp_selected{
+    background-color:#1B6AED !important;
+    color:white !important;
+    border-radius:7px !important;
+}
+.hsp-seleted-list{
+    color: #1C64F2 !important;
+    border-bottom: 1px solid #1C64F2 !important;
+}
+.hide{
+    display: none !important;
+}
+.three-point-end{
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+}
+.pointer{
+    cursor: pointer !important;
+}
+
+/* ******** TEXT ******* */
+.text-7rem{
+    font-size:0.7rem !important
+}
+.text-7vw{
+    font-size:0.7vw !important
+}
+.text-9vw{
+    font-size:0.9vw !important
+}
+.text-1vw{
+    font-size:1vw !important
+}
+
+.text-muted-G1{
+    color: #CBCBCB !important;
+}
+
+
+.text-blue-400{
+    color: #1B6AED !important;
+}
+.text-blue-500{
+    color: #0D6EFD !important;
+}
+.text-blue-600{
+    color: #1C64F2 !important;
+}
+.text-blue-700{
+    color: #1E459C !important;
+}
+
+.text-gray-G1{
+    color:#4B5562 !important;
+}
+.text-gray-300{
+    color:#cbc7c7 !important
+}
+.text-gray-400{
+    color:#868686 !important
+}
+.text-gray-500{
+    color:#4B5562 !important
+}
+
+.text-gray-600{
+    color:#6B7280 !important
+}
+
+
+.text-orang-500{
+    color: #FF5F1F !important;
+}
+
+
+.text-green-100{
+    color: #DEF7EC !important;
+}
+.text-green-00{
+    color: #DFF6C9 !important;
+}
+.text-green-500{
+    color: #1BB869 !important;
+}
+.text-green-600{
+    color: #1A9E70 !important;
+}
+.text-green-700{
+    color: #046C4E !important ;
+}
+.text-green-800{
+    color: #497E15 !important ;
+}
+
+/* ******** WIDTH &HEIGHT ******* */
+
+.vw-1{
+    width: 1vw !important;
+}
+
+
+.vh-1{
+    height: 1vw !important;
+}
+
+/* ******** ICON ******* */
+.color_gray{
+    filter:grayscale(100%) !important
+}
+
+.bi{
+    text-shadow: 0px 0px 1px rgba(2,2,2,0.8) !important;
+}
+
+/* ******** BACKGROUND ******* */
+
+/* blue */
+.bg-blue-100{
+    background-color: #F3F7FF !important;
+}
+
+
+/* bex */
+.bg-bex-500{
+    background-color: #E9C150 !important;
+}
+
+
+/* primary */
+.bg-primary-50{
+    background-color: #EBF5FE !important;
+}
+.bg-primary-200{
+    background-color: #C3DEFB !important;
+}
+
+
+
+/* green */
+.bg-green-100{
+    background-color: #DEF7EC !important;
+}
+.bg-green-200{
+    background-color: #DFF6C9 !important;
+}
+.bg-green-500{
+    background-color: #1BB869 !important;
+}
+.bg-green-600{
+    background-color: #1A9E70 !important;
+}
+.bg-green-700{
+    background-color: #046C4E !important ;
+}
+.bg-green-800{
+    background-color: #497E15 !important ;
+}
+
+
+/* gray */
+.bg-gray-100{
+    background-color: #EDEDED !important ;
+}
+
+
+

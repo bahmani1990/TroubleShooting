@@ -1,0 +1,15 @@
+<div *ngIf="ntf.notification" [class]="ntf.notification.bgColor"  class=" d-flex flex-column position-absolute w-50 gap-2 pt-2 pb-2 ps-4 pe-4 rounded-3">
+    <div class="align-items-center d-flex justify-content-between">
+      <div class="align-items-center d-flex gap-2 text-green-700">
+      <!-- fa-exclamation-circle -->
+      <i [class]="ntf.notification.iconMessage" class="fa fa-check-circle"></i>
+      <p [class]="ntf.notification.colorMessage" class="fw-bold m-0">{{ntf.notification.message}}</p>
+      </div>
+      <div>
+        <i  class="fa fa-xmark text-green-700 pointer" (click)="ntf.ClearNotification()"></i>
+      </div>
+    </div>
+    <div>
+      <p [class]="ntf.notification.colorMessage" class="m-0 text-green-700">{{ntf.notification.text}}</p>
+    </div>
+  </div>

@@ -1,0 +1,9 @@
+
+<div [style.border-style]="borderStyle" [style.border-radius.px]="borderRadius" [style.width]="width+'%'" [style.height]="height+'vh'" 
+  class="border-1  align-items-center d-flex flex-column justify-content-center" style="border-color: #aaaadf;" >
+    <i class="bi bi-cloud-upload text-blue-500" style="font-size: 60px;cursor: pointer;" (click)="ClickUploadPic()"></i>
+    <p style="font-size: 14px;">فایل ضمیمه خود را اینجا بکشید</p>
+    <p class="text-gray-300" style="font-size: 12px;">فرمت های مجاز .png , .gif ,.jpg</p>
+    <p class="text-gray-300" style="font-size: 12px;">حدااکثر سایز فایل 128 کیلوبایت</p>
+    <input #input type="file" hidden [accept]="accept" [multiple]="multiple">
+</div>

@@ -1,0 +1,80 @@
+<section #Main class="h-100 d-flex flex-column gap-2">
+    <div #HeadPage class="d-flex headPage justify-content-between p-2">
+        <div  class="right-headPage d-flex  gap-3">
+            <img src="/assets/picture/Frame 2610691.jpg" alt="" srcset="" style="  width: 8vw;height: 4vh;">
+            <!-- <input class="form-control form-control w-50" style="height: 4vh;" type="text" placeholder="جستجو"> -->
+            <div class="align-items-center border h-75 d-flex gap-1 pe-2 ps-2 rounded-3">
+                <i class="fa fa-magnifying-glass  text-gray-300" style="top: 4px;right: 7px; width: 1.3vw;" alt=""></i>
+                <input class="search form-control" type="text" placeholder="جستجو">
+              </div>
+        </div>
+        <div class="align-items-center d-flex gap-3">
+            <div class="d-flex gap-3">
+                <img style="width: 1.2vw;" src="/assets/icons/setting.svg" alt="">
+                <img style="width: 1.2vw;" src="/assets/icons/bell.svg" alt="">
+            </div>
+           
+                <div>
+                    <img class="rounded-5" src="assets/picture/Robert Brown.png" alt="" style="width: 3vw;height: 3vw;">
+                </div>
+                <div>
+                    <p class="text-1vw mb-0">علی محمدی</p>
+                    <p class="text-7vw text-danger">کاربر عادی</p>
+                </div>
+                <div class="align-items-start d-flex h-100">
+                    <img src="/assets/icons/chevron-down.svg" alt="">
+                </div>
+          
+        </div>
+    </div>
+    <div class="h-100 main border-top w-100 d-flex">
+        <ul  *ngIf="modeQuestion=='NotNewQuestion'" style="width: 15%;padding: 15px 5px;" class="main-right border-start h-100 d-flex flex-column p-2">
+            <li  [class]="MODE=='QUESTIONS' ? 'text-white':'text-gray-400'" class="d-flex gap-2 p-2 align-items-center mb-2"  [class.hsp_selected]="MODE=='QUESTIONS'" (click)="MODE='QUESTIONS'">
+                <i  class="fa fa-question-circle"></i>
+                <p style="font-size: 1.2vw;">سوالات</p>
+            </li>
+            <li  [class]="MODE=='PROFILE' ? 'text-white':'text-gray-400'" class=" p-2 align-items-center position-relative mb-1" [class.hsp_selected]="MODE=='PROFILE'" (click)="MODE='PROFILE'">
+                <div class="d-flex justify-content-between">
+                    <div  class="d-flex gap-2 justify-content-between align-items-center">
+                        <i  class="fa fa-user"></i>
+                        <p style="font-size: 1.2vw;">پروفایل</p>
+                    </div>
+                    <i (click)="openProfile= !openProfile" [class]="openProfile ?'fa-angle-up':'fa-angle-down'" class="fa"></i>
+                </div>    
+            </li>
+            <ul [class.hide]="!openProfile" class="bg-primary-200 d-flex flex-column gap-3 pe-4 pt-2 rounded-3 text-1vw text-black pb-1 mb-4">
+                <li [class.text-primary]="MODE_PROFILE=='MY_QUESTIONS'"  (click)="MODE_PROFILE='MY_QUESTIONS'"><span>سوالات من</span></li>
+                <li [class.text-primary]="MODE_PROFILE=='SAVES'"  (click)="MODE_PROFILE='SAVES'"><span>ذخیره ها</span></li>
+                <li [class.text-primary]="MODE_PROFILE=='SITTING'" (click)="MODE_PROFILE='SITTING'"><span>تنظیمات</span></li>
+            </ul>
+            <li [class]="MODE=='TAGS' ? 'text-white':'text-gray-400'" class="d-flex gap-2 p-2 align-items-center" [class.hsp_selected]="MODE=='TAGS'" (click)="MODE='TAGS'">
+                <i  class="fa fa-tags"></i>
+                <p style="font-size: 1.2vw;">برچسب ها</p>
+            </li>
+        </ul>
+        <ul *ngIf="modeQuestion=='newQuestion'|| modeQuestion=='showquestion'" style="width: 4%;padding: 15px 5px;" class="main-right border-start h-100 d-flex flex-column gap-4 p-2">
+            <li class="d-flex gap-2 p-2" (click)="MODE='QUESTIONS'" [class.hsp_selected]="MODE=='QUESTIONS'">
+                <i [class]="MODE=='QUESTIONS' ? 'text-white':'text-gray-400'" class="fa fa-question-circle"></i>
+            </li>
+            <li class="d-flex justify-content-between p-2" [class.hsp_selected]="MODE=='PROFILE'" (click)="MODE='PROFILE'">
+               <i [class]="MODE=='PROFILE' ? 'text-white':'text-gray-400'" class="fa fa-user"></i>
+            </li>
+            <li class="d-flex gap-2 p-2" [class.hsp_selected]="MODE=='TAGS'" (click)="MODE='TAGS'">
+                <i [class]="MODE=='TAGS' ? 'text-white':'text-gray-400'" class="fa fa-tags"></i>
+            </li>
+        </ul>
+        <div [style]="modeQuestion=='newQuestion' || modeQuestion=='showquestion' ? {width: '96%'} : {width: '85%'}" #MainLeft [style.height.px]="Main.offsetHeight-HeadPage.offsetHeight-15" class="main-left p-2 pt-2 pb-2 pe-4 ps-4" style="overflow-y: auto;">
+            <div class="h-100" [class.hide]="MODE!='QUESTIONS'">
+                <app-questions (ModeQuestion)="modeQuestion=$event" (MODE_MAIN)="ChangeComponent($event)" ></app-questions>
+            </div>
+
+            <div class="h-100" [class.hide]="MODE!='PROFILE'">
+                <app-profile [MODE_PROFILE]="MODE_PROFILE" (MODE_MAIN)="ChangeComponent($event)"></app-profile>
+            </div>
+   
+            <div class="h-100" [class.hide]="MODE!='TAGS'">
+                <app-tags></app-tags>
+            </div>
+        </div>
+    </div>
+</section>

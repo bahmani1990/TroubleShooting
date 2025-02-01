@@ -1,0 +1,127 @@
+<section>
+    <div class="horizontal">
+        <div class="vertical p-5">
+            <div class="d-flex flex-column  h-100" >
+                <div>
+                    <img src="/assets/picture/Frame 2610691.jpg" alt="" srcset="">
+                </div>
+            <div class="d-flex flex-column gap-4 mt-5 mb-3">
+                <p class="text-center" style="font-size: 1.7vw;" >ثبت نام | ورود</p>
+
+                 <!-- MODE=='ENTER' -->
+                <div [class]="MODE=='ENTER' ? 'gap-4' : 'gap-3'" *ngIf="MODE=='ENTER'" class="d-flex flex-column gap-4">
+                    <div  class="d-flex flex-column gap-1">
+                        <p class=" small text-black-50" style="font-size: 1vw;">نام کاربری</p>
+                    <div class="input-group">
+                        
+                            <span class="input-group-text" id="basic-addon1"><img src="assets/icons/user.svg" class="icon"></span>
+                       
+                        <input type="text" class="form-control h-100"  aria-label="Username" aria-describedby="basic-addon1">
+                    </div>
+                    </div>
+                    <div  class="d-flex flex-column gap-1">
+                        <p class=" small text-black-50" style="font-size: 1vw;">رمز عبور </p>
+                    <div  class="d-flex flex-column gap-1">
+                        <div class="input-group">
+                            <span class="input-group-text" id="basic-addon1"><img src="assets/icons/vector.svg" class="icon"></span>
+                            <input type="text" class="form-control h-100"  aria-label="Username" aria-describedby="basic-addon1">
+                        </div>
+                        <a class="text-start text-success" href="#" style="font-size: 14px;" (click)="MODE='SENDCODING'">فراموشی رمز عبور</a>
+                    </div>
+                    
+                    </div>
+                </div>
+                <!--MODE=='REGISTERY' -->
+                 <div *ngIf="MODE=='REGISTERY'">
+                    <div  class="d-flex flex-column gap-1">
+                        <p class=" small text-black-50" style="font-size: 1vw;">نام کاربری</p>
+                        <div class="input-group">
+                        
+                            <span class="input-group-text" id="basic-addon1"><img src="assets/icons/user.svg" class="icon"></span>
+                            <input type="text" class="form-control h-100"  aria-label="Username" aria-describedby="basic-addon1">
+                        </div>
+                        <p class=" small text-black-50" style="font-size: 1vw;">رمز عبور </p>
+                       <div  class="d-flex flex-column gap-1">
+                        <div class="input-group">
+                            <span class="input-group-text text-light" id="basic-addon1"><img src="assets/icons/vector.svg" class="icon"></span>
+                            <input type="text" class="form-control h-100"  aria-label="Username" aria-describedby="basic-addon1">
+                        </div>
+                       
+                        <p class=" small text-black-50" style="font-size: 1vw;">تکرار کلمه عبور </p>
+                    <div  class="d-flex flex-column gap-1">
+                        <div class="input-group">
+                            <span class="input-group-text text-light" id="basic-addon1"><img src="assets/icons/vector.svg" class="icon"></span>
+                            <input type="text" class="form-control h-100"  aria-label="Username" aria-describedby="basic-addon1">
+                        </div>
+                    </div>
+                        <p class=" small text-black-50" style="font-size: 1vw;"> شماره همراه</p>
+                    <div  class="d-flex flex-column gap-1">
+                        <div class="input-group">
+                            <span class="input-group-text " id="basic-addon1"><img src="assets/icons/user.svg" class="icon"></span>
+                            <input type="text" class="form-control h-100"  aria-label="Username" aria-describedby="basic-addon1">
+                        </div>
+                    </div>
+                    </div>
+                    </div>
+    
+                </div> 
+                <!-- MODE=='AGREEMENTCODE' -->
+                 <div *ngIf="MODE=='AGREEMENTCODE'" class="d-flex flex-column gap-4">
+                    <p class="text-gray-G1" style="font-size: 1.vw; ">کد تایید را وارد کنید</p>
+
+                    <div class="d-flex justify-content-center gap-3">
+                        <input class="form-control h-100" style="width: 3vw;" type="text">
+                        <input class="form-control h-100" style="width: 3vw;" type="text">
+                        <input class="form-control h-100" style="width: 3vw;" type="text">
+                        <input class="form-control h-100" style="width: 3vw;" type="text">
+                    </div>
+
+                    <div class="d-flex justify-content-between">
+                        <p class="text-gray-G1" style="font-size: .7vw;">کد برای شما ارسال شد</p>
+                        <div class="d-flex gap-2" style="font-size: .7vw;">
+                            <p class="text-muted-G1">ارسال دوباره</p>
+                            <p>01:26</p>
+                        </div>
+                    </div>
+                 </div>
+                  <!-- MODE=='SENDCODING' -->
+                  <div *ngIf="MODE=='SENDCODING'"  class="d-flex flex-column gap-4">
+                    <div  class="d-flex flex-column gap-1">
+                        <p class=" small text-black-50" style="font-size: 1vw;">شماره همراه</p>
+                    <div class="input-group">
+                            <span class="input-group-text" id="basic-addon1"><img src="assets/icons/phone.svg" class="icon"></span>
+                        <input type="text" class="form-control h-100"  aria-label="Username" aria-describedby="basic-addon1">
+                    </div>
+                    </div>
+                </div>
+                 <!-- END -->
+                <button *ngIf="MODE=='SENDCODING' || MODE=='AGREEMENTCODE'" type="button" class="btn btn-primary btn-lg btn-block" style="font-size: 1.2vw;" (click)="MODE=='SENDCODING' ? MODE='AGREEMENTCODE':''" >{{MODE=='SENDCODING'? 'ارسال کد' :'ادامه'}}</button>
+                <button *ngIf="MODE=='ENTER' " type="button" class="btn btn-primary btn-lg btn-block" style="font-size: 1.2vw;">ورود</button>
+                <!-- <button *ngIf="MODE=='AGREEMENTCODE' " type="button" class="btn btn-primary btn-lg btn-block" style="font-size: 1.5vw;"><a href="#">ورود</a></button> -->
+                <button *ngIf="MODE=='REGISTERY'" type="button" class="btn btn-primary btn-lg btn-block" style="font-size: 1.2vw;">ثبت نام</button>
+            </div>
+            <a *ngIf="MODE=='ENTER' || MODE=='REGISTERY' " [ngClass]="MODE=='ENTER'?['text-center','text-danger'] : ['text-7rem' ,'text-black' ,'text-center']" [style]="MODE=='ENTER' ? {'font-size': '1vw'}:{'font-size': '0.6vw'}" href="#" (click)="MODE='REGISTERY'">{{MODE=='ENTER' ? 'ثبت نام در  سایت' :' ورود و عضویت شما به منزله پذیرفتن قوانین و مقررات می باشد' }}</a>
+            </div>
+        </div>
+        <!-- Left Side -->
+        <div class="horizontal-text text-end gap-3">
+            <div>
+                <p class="text-white " style="font-size: 2vw;"> سوال بپرسید,پاسخ بدهید,یادبگیرید!</p>
+            </div>
+            <div class="d-flex flex-column gap-3">
+                <p  style="font-size: 1vw;">
+                    <span class="text-white text-opacity-50 px-2">جواب مشکل خود را سریع پیدا کنید...</span>
+                    <i class=" fas fa-clock text-light"></i>
+                </p>
+                <p style="font-size: 1vw;">
+                    <span class="text-white text-opacity-50 px-2" >دانش خود را با دیگران به اشتراک بگذارید ...</span>
+                    <i class="fas fa-user-friends text-light"></i>
+                </p>
+                <p  style="font-size: 1vw;">
+                    <span class="text-white text-opacity-50 px-2">با پاسخ دادن , اعتبار و جایگاه حرفه ای تان را تقویت کنید...</span>
+                    <i class="fas fa-medal text-light"></i>
+                </p>
+            </div>
+        </div>
+    </div>
+</section>

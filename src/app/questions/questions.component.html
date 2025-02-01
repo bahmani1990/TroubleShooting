@@ -1,0 +1,402 @@
+<app-simple></app-simple>
+<router-outlet></router-outlet>
+<section>
+    <section *ngIf="MODE=='COMPONENT_QUESTION'" class="headPage d-flex flex-column gap-3" >
+      <div class="d-flex flex-column gap-4">
+        <div  class="up-headPage d-flex justify-content-between">
+          <div class="align-items-center d-flex gap-2">
+            <img src="/assets/icons/question-transparent.svg" class="vw-1" alt="" srcset="">
+            <p  style="font-size: 1.1vw;color: #1E429F;">سوالات</p>
+          </div>
+          <div class="align-items-center border d-flex gap-1 pe-2 ps-2 rounded-3">
+            <i class="fa fa-magnifying-glass  text-gray-300" style="top: 4px;right: 7px; width: 1.3vw;" alt=""></i>
+            <input class="search form-control" type="text" placeholder="جستجو">
+          </div>
+          <div>
+            <button class="align-items-center btn btn-primary d-flex gap-2" style="background-color: #1E429F;width: 10vw;" (click)="MODE='NEW_QUESTION';NewQuestion()">
+                <i class="fa fa-question-circle text-light"></i>
+                <span class="text-nowrap" style="font-size: 0.9vw;" >سوالات رو بپرس</span>
+            </button>
+          </div>
+        </div>
+
+        <div  class="down-headPage d-flex justify-content-between " style="height: 32px;">
+          <div class="align-items-center d-flex gap-2">
+            <p  style="font-size: 0.9vw;color: #1B6AED;">100 سوال جدید</p>
+          </div>
+          <ul class="header d-flex gap-5 text-gray-500 border-bottom" style="font-size: 0.9vw;">
+            <li [class.hsp-seleted-list]="MODE_LIST=='NEW'" (click)="MODE_LIST='NEW'">
+              <span>جدید</span>
+            </li>
+            <li [class.hsp-seleted-list]="MODE_LIST=='MOST_VIEW'" (click)="MODE_LIST='MOST_VIEW'">
+              <span>پربازدید</span>
+            </li>
+            <li [class.hsp-seleted-list]="MODE_LIST=='NO_ANSWER'" (click)="MODE_LIST='NO_ANSWER'">
+              <span>بدون پاسخ</span>
+            </li>
+            <li [class.hsp-seleted-list]="MODE_LIST=='OTHER'" (click)="MODE_LIST='OTHER'">
+              <span>سایر</span>
+            </li>
+          </ul>
+          
+            <button class="align-items-center btn btn-primary d-flex gap-2 justify-content-center " style="background-color: #F3F4F6;color: #1C64F2;width: 10vw;">
+                <i class="fa fa-filter text-blue-600"></i>
+                <span class="text-blue-600"> فیلتر </span>
+                
+            </button>
+          
+        </div>
+      </div>
+      <!-- جدید -->
+       <ng-container >
+       <div [class.hide]="MODE_LIST!='NEW'" class="border d-flex flex-column gap-4 pb-3 pe-3 ps-3 pt-3 rounded-4 pointer" (click)="MODE='SHOW_QUESTION';ShowQuestion()">
+        <div class="d-flex justify-content-between align-items-center">
+          <div class=" d-flex gap-3" style="width: 85%;" >
+            <p class="text-blue-500">#<span>1</span></p>
+            <p style="font-size: 1.2vw;">دریافت ایمیل AWS SES در gmail زمان زیادی می برد و پیوند تأیید مشکوک نشان داده می شود</p>        
+          </div>
+            <div class="d-flex gap-3 justify-content-center pe-5" style="width: 15%;">
+              <i class="fa-thumbs-up far position-relative pointer"><p class="bg-bex-500 p-1 position-absolute rounded three-point-end" style="font-size: 7px;top: -11px;left: 10px;max-width: 30px">256</p></i>
+              <i class="far fa-commenting position-relative pointer"><p class="bg-green-500 p-1 position-absolute rounded three-point-end" style="font-size: 7px;top: -11px;left: 10px;max-width: 30px">256</p></i>
+              <i [class]="SAVE_QUESTION==false ? 'bi-bookmark-plus':'bi-bookmark-plus-fill text-orang-500' " class="bi  pointer" (click)="SAVE_QUESTION= !SAVE_QUESTION"></i>
+            </div>
+         </div>
+         <div class="d-flex align-items-center">
+          <div class="bg-blue-100 d-flex pb-2 pe-4 ps-4 pt-2 rounded-4" >
+            <i class="fa fa-exclamation-circle ps-2 text-blue-400"></i>
+          <p style="font-size: 0.9vw;">من aws SES را در سرورم ادغام کرده ام. من با مشکلی روبرو هستم وقتی ایمیلی را از سرورم به کاربر (gmail) ارسال می‌کنم، زمان زیادی طول می‌کشد تا در آدرس ایمیل کاربر دریافت شود. به طور متوسط ​​حدود 5-6 دقیقه طول می کشد (...</p>
+          </div>
+          <div class="d-flex gap-3 justify-content-center" style="width: 15%;">
+            <i class="fa fa-desktop text-blue-400"></i>
+            <p class="text-blue-400" style="font-size: 0.9vw;">سیستم یک</p>
+          </div>
+         </div>
+         <div class="d-flex justify-content-between align-items-center" >
+          <div class="d-flex gap-4" style="width: 85%;">
+            <a href="#"><i class="bg-blue-100 fa fa-paperclip p-2 rounded-3 text-gray-600"></i></a>
+            <p class="bg-blue-100  p-2 rounded-3 text-blue-400"  style="font-size: 0.9vw;"><a class="text-blue-400" href="#">اندروید</a></p>
+            <p class="bg-blue-100  p-2 rounded-3 text-blue-400"  style="font-size: 0.9vw;"><a class="text-blue-400" href="#">ایمیل </a> </p>
+            <p class="bg-blue-100  p-2 rounded-3 text-blue-400" style="font-size: 0.9vw;"><a class="text-blue-400" href="#"> aws SES </a></p>
+          </div>
+          <div class="align-items-baseline d-flex gap-3 justify-content-center text-gray-600" style="font-size: 0.9vw;" style="width: 15%;">
+            <p style="font-size: 0.7vw;"> 10 دقیقه پیش</p>
+           <div class="align-items-baseline d-flex gap-2 text-1vw">
+            <p ><span>علی</span> - <span>اکبر</span></p>
+            <i class="far fa-user"></i>
+           </div>
+          </div>
+         </div>
+       </div>
+      </ng-container>
+      <!-- پربازدید -->
+      <ng-container >
+        <div [class.hide]="MODE_LIST!='MOST_VIEW'" class="border d-flex flex-column gap-4 pb-3 pe-3 ps-3 pt-3 rounded-4" (click)="MODE='SHOW_QUESTION';ShowQuestion()">
+         <div class="d-flex justify-content-between align-items-center">
+          <div class="d-flex gap-3" style="width: 85%;">
+            <p class="text-blue-500">#<span>1</span></p>
+            <p style="font-size: 1.2vw;">دریافت ایمیل AWS SES در gmail زمان زیادی می برد و پیوند تأیید مشکوک نشان داده می شود</p>        
+          </div>
+            <div class="d-flex gap-3 justify-content-center pe-5" style="width: 15%;">
+              <i class="fa-thumbs-up far position-relative pointer"><p class="bg-bex-500 p-1 position-absolute rounded three-point-end" style="font-size: 7px;top: -11px;left: 10px;max-width: 30px">256</p></i>
+              <i class="far fa-commenting position-relative pointer"><p class="bg-green-500 p-1 position-absolute rounded three-point-end" style="font-size: 7px;top: -11px;left: 10px;max-width: 30px">256</p></i>
+              <i [class]="SAVE_QUESTION==false ? 'bi-bookmark-plus':'bi-bookmark-plus-fill text-orang-500' " class="bi  pointer" (click)="SAVE_QUESTION= !SAVE_QUESTION"></i>
+            </div>
+         </div>
+         <div class="d-flex align-items-center">
+          <div class="bg-blue-100 d-flex pb-2 pe-4 ps-4 pt-2 rounded-4" >
+            <i class="fa fa-exclamation-circle ps-2 text-blue-400"></i>
+          <p style="font-size: 0.9vw;">من aws SES را در سرورم ادغام کرده ام. من با مشکلی روبرو هستم وقتی ایمیلی را از سرورم به کاربر (gmail) ارسال می‌کنم، زمان زیادی طول می‌کشد تا در آدرس ایمیل کاربر دریافت شود. به طور متوسط ​​حدود 5-6 دقیقه طول می کشد (...</p>
+          </div>
+          <div class="d-flex gap-3 justify-content-center" style="width: 15%;">
+            <i class="fa fa-desktop text-blue-400"></i>
+            <p class="text-blue-400" style="font-size: 0.9vw;">سیستم یک</p>
+          </div>
+         </div>
+         <div class="d-flex justify-content-between align-items-center" >
+          <div class="d-flex gap-4" style="width: 85%;">
+            <a href="#"><i class="bg-blue-100 fa fa-paperclip p-2 rounded-3 text-gray-600"></i></a>
+            <p class="bg-blue-100  p-2 rounded-3 text-blue-400"  style="font-size: 0.9vw;"><a class="text-blue-400" href="#">اندروید</a></p>
+            <p class="bg-blue-100  p-2 rounded-3 text-blue-400"  style="font-size: 0.9vw;"><a class="text-blue-400" href="#">ایمیل </a> </p>
+            <p class="bg-blue-100  p-2 rounded-3 text-blue-400" style="font-size: 0.9vw;"><a class="text-blue-400" href="#"> aws SES </a></p>
+          </div>
+          <div class="align-items-baseline d-flex gap-3 justify-content-center text-gray-600" style="font-size: 0.9vw;" style="width: 15%;">
+            <p style="font-size: 0.7vw;"> 10 دقیقه پیش</p>
+           <div class="align-items-baseline d-flex gap-2 text-1vw">
+            <p ><span>علی</span> - <span>اکبر</span></p>
+            <i class="far fa-user"></i>
+           </div>
+          </div>
+         </div>
+        </div>
+      </ng-container>
+        <!-- بدون پاسخ -->
+        <ng-container >
+         <div [class.hide]="MODE_LIST!='NO_ANSWER'" class="border d-flex flex-column gap-4 pb-3 pe-3 ps-3 pt-3 rounded-4" (click)="MODE='SHOW_QUESTION';ShowQuestion()">
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="d-flex gap-3" style="width: 85%;">
+              <p class="text-blue-500">#<span>1</span></p>
+              <p style="font-size: 1.2vw;">دریافت ایمیل AWS SES در gmail زمان زیادی می برد و پیوند تأیید مشکوک نشان داده می شود</p>        
+            </div>
+              <div class="d-flex gap-3 justify-content-center pe-5" style="width: 15%;">
+                <i class="fa-thumbs-up far position-relative pointer"><p class="bg-bex-500 p-1 position-absolute rounded three-point-end" style="font-size: 7px;top: -11px;left: 10px;max-width: 30px">256</p></i>
+                <i class="far fa-commenting position-relative pointer"><p class="bg-green-500 p-1 position-absolute rounded three-point-end" style="font-size: 7px;top: -11px;left: 10px;max-width: 30px">256</p></i>
+                <i [class]="SAVE_QUESTION==false ? 'bi-bookmark-plus':'bi-bookmark-plus-fill text-orang-500' " class="bi  pointer" (click)="SAVE_QUESTION= !SAVE_QUESTION"></i>
+              </div>
+           </div>
+           <div class="d-flex align-items-center">
+            <div class="bg-blue-100 d-flex pb-2 pe-4 ps-4 pt-2 rounded-4" >
+              <i class="fa fa-exclamation-circle ps-2 text-blue-400"></i>
+            <p style="font-size: 0.9vw;">من aws SES را در سرورم ادغام کرده ام. من با مشکلی روبرو هستم وقتی ایمیلی را از سرورم به کاربر (gmail) ارسال می‌کنم، زمان زیادی طول می‌کشد تا در آدرس ایمیل کاربر دریافت شود. به طور متوسط ​​حدود 5-6 دقیقه طول می کشد (...</p>
+            </div>
+            <div class="d-flex gap-3 justify-content-center" style="width: 15%;">
+              <i class="fa fa-desktop text-blue-400"></i>
+              <p class="text-blue-400" style="font-size: 0.9vw;">سیستم یک</p>
+            </div>
+           </div>
+           <div class="d-flex justify-content-between align-items-center" >
+            <div class="d-flex gap-4" style="width: 85%;">
+              <a href="#"><i class="bg-blue-100 fa fa-paperclip p-2 rounded-3 text-gray-600"></i></a>
+              <p class="bg-blue-100  p-2 rounded-3 text-blue-400"  style="font-size: 0.9vw;"><a class="text-blue-400" href="#">اندروید</a></p>
+              <p class="bg-blue-100  p-2 rounded-3 text-blue-400"  style="font-size: 0.9vw;"><a class="text-blue-400" href="#">ایمیل </a> </p>
+              <p class="bg-blue-100  p-2 rounded-3 text-blue-400" style="font-size: 0.9vw;"><a class="text-blue-400" href="#"> aws SES </a></p>
+            </div>
+            <div class="align-items-baseline d-flex gap-3 justify-content-center text-gray-600" style="font-size: 0.9vw;" style="width: 15%;">
+              <p style="font-size: 0.7vw;"> 10 دقیقه پیش</p>
+             <div class="align-items-baseline d-flex gap-2 text-1vw">
+              <p ><span>علی</span> - <span>اکبر</span></p>
+              <i class="far fa-user"></i>
+             </div>
+            </div>
+           </div>
+         </div>
+        </ng-container>
+         <!-- سایر -->
+         <ng-container >
+         <div [class.hide]="MODE_LIST!='OTHER'" class="border d-flex flex-column gap-4 pb-3 pe-3 ps-3 pt-3 rounded-4" (click)="MODE='SHOW_QUESTION';ShowQuestion()">
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="d-flex gap-3" style="width: 85%;">
+              <p class="text-blue-500">#<span>1</span></p>
+              <p style="font-size: 1.2vw;">دریافت ایمیل AWS SES در gmail زمان زیادی می برد و پیوند تأیید مشکوک نشان داده می شود</p>        
+            </div>
+              <div class="d-flex gap-3 justify-content-center pe-5" style="width: 15%;">
+                <i class="fa-thumbs-up far position-relative pointer"><p class="bg-bex-500 p-1 position-absolute rounded three-point-end" style="font-size: 7px;top: -11px;left: 10px;max-width: 30px">256</p></i>
+                <i class="far fa-commenting position-relative pointer"><p class="bg-green-500 p-1 position-absolute rounded three-point-end" style="font-size: 7px;top: -11px;left: 10px;max-width: 30px">256</p></i>
+                <i [class]="SAVE_QUESTION==false ? 'bi-bookmark-plus':'bi-bookmark-plus-fill text-orang-500' " class="bi  pointer" (click)="SAVE_QUESTION= !SAVE_QUESTION"></i>
+              </div>
+           </div>
+           <div class="d-flex align-items-center">
+            <div class="bg-blue-100 d-flex pb-2 pe-4 ps-4 pt-2 rounded-4" >
+              <i class="fa fa-exclamation-circle ps-2 text-blue-400"></i>
+            <p style="font-size: 0.9vw;">من aws SES را در سرورم ادغام کرده ام. من با مشکلی روبرو هستم وقتی ایمیلی را از سرورم به کاربر (gmail) ارسال می‌کنم، زمان زیادی طول می‌کشد تا در آدرس ایمیل کاربر دریافت شود. به طور متوسط ​​حدود 5-6 دقیقه طول می کشد (...</p>
+            </div>
+            <div class="d-flex gap-3 justify-content-center" style="width: 15%;">
+              <i class="fa fa-desktop text-blue-400"></i>
+              <p class="text-blue-400" style="font-size: 0.9vw;">سیستم یک</p>
+            </div>
+           </div>
+           <div class="d-flex justify-content-between align-items-center" >
+            <div class="d-flex gap-4" style="width: 85%;">
+              <a href="#"><i class="bg-blue-100 fa fa-paperclip p-2 rounded-3 text-gray-600"></i></a>
+              <p class="bg-blue-100  p-2 rounded-3 text-blue-400"  style="font-size: 0.9vw;"><a class="text-blue-400" href="#">اندروید</a></p>
+              <p class="bg-blue-100  p-2 rounded-3 text-blue-400"  style="font-size: 0.9vw;"><a class="text-blue-400" href="#">ایمیل </a> </p>
+              <p class="bg-blue-100  p-2 rounded-3 text-blue-400" style="font-size: 0.9vw;"><a class="text-blue-400" href="#"> aws SES </a></p>
+            </div>
+            <div class="align-items-baseline d-flex gap-3 justify-content-center text-gray-600" style="font-size: 0.9vw;" style="width: 15%;">
+              <p style="font-size: 0.7vw;"> 10 دقیقه پیش</p>
+             <div class="align-items-baseline d-flex gap-2 text-1vw">
+              <p ><span>علی</span> - <span>اکبر</span></p>
+              <i class="far fa-user"></i>
+             </div>
+            </div>
+           </div>
+         </div>
+        </ng-container>
+    </section>
+    <section *ngIf="MODE=='NEW_QUESTION'"> 
+      <div>
+        <app-bread-cramp  (EventPageName)="SelectedBreadCramp($event)"></app-bread-cramp>
+      </div>
+      <div class="align-items-center d-flex gap-2 mb-2">
+        <i class="bi bi-plus-circle fs-5 " style="color: #1E429F;"></i>
+        <p  style="font-size: 1.1vw;color: #1E429F;">سوال جدید</p>
+      </div>
+      <div class="border p-3 rounded-3">
+        <div class="d-flex flex-column gap-2">
+          <div class="d-flex">
+            <p class="text-nowrap" style="width: 10%;">عنوان سوال</p>
+            <input style="height: 6vh" type="text" style="width: 90%;" class="form-control">
+          </div>
+          <div class="d-flex" >
+            <p class="text-nowrap" style="width: 10%;">متن سوال</p>
+            <input style="height: 13vh;height: 13vh" type="text" style="width: 90%;" class="form-control">
+          </div>
+          <div class="d-flex" >
+            <p class="text-nowrap" style="width: 10%;">برچسب</p>
+            <input style="height: 6vh" type="text" style="width: 90%;" class="form-control">
+          </div>
+          <div  class="d-flex position-relative">
+            <p class="text-nowrap" style="width: 10%;">سیستم</p>
+            <select #select  style="height: 6vh;width: 15%;" class="form-control">
+              <option  value="1">سیستم یک</option>
+            </select>
+            <i (click)="OpenSelect()" class="fa fa-chevron-down position-absolute" style="top: 10px;right: 245px;"></i>
+          </div>
+          <app-upload-file></app-upload-file>
+        </div>
+        <button class="align-items-center btn btn-primary d-flex gap-2 mt-2"  style="background-color: #1E429F;width: 10vw;" (click)="MODE='COMPONENT_QUESTION'">
+          <i class="fa fa-check-circle text-light"></i>
+          <span class="text-nowrap" style="font-size: 0.9vw;" (click)="MODE='NEW_QUESTION';ShowNofication()">ثبت سوال </span>
+      </button>
+      </div>
+    </section>
+    <section *ngIf="MODE=='SHOW_QUESTION'" class="d-flex flex-column gap-3" >
+      <app-bread-cramp  (EventPageName)="SelectedBreadCramp($event)"></app-bread-cramp>
+      <div class="d-flex justify-content-between  ">
+        <div class="align-items-center d-flex gap-2">
+          <i class="bi bi-question-circle shadow-none text-danger pt-2"></i>
+          <p class="text-danger" style="font-size: 1.1vw;">سوال</p>
+        </div>
+        <div>
+          <button class="align-items-center btn btn-primary d-flex gap-2" style="background-color: #1E429F;width: 10vw;" (click)="MODE='NEW_QUESTION';AskingQuestion()">
+              <i class="fa fa-question-circle text-light"></i>
+              <span class="text-nowrap" style="font-size: 0.9vw;" >سوالات رو بپرس</span>
+          </button>
+        </div>
+      </div>
+      <div>
+        <div class="d-flex gap-4 text-1vw ">
+          <i class="bg-gray-100 fa fa-angle-up p-2 rounded-2" style="font-size: 10px;height: 27px;"></i>
+          <div class="bg-primary-50 d-flex gap-2 p-2 rounded-2 w-100">
+            <p>#1</p>
+            <p>چگونه مطمئن شویم که RStudio از نیمی از حافظه من استفاده می کند؟</p>
+          </div>
+        </div>
+        <div>
+          <p class="pe-2 text-1vw">8</p>
+        </div>
+        <div class="d-flex gap-4 text-1vw ">
+          <i class="bg-gray-100 fa fa-angle-down p-2 rounded-2" style="font-size: 10px;height: 27px;"></i>
+          <div class="d-flex gap-4 justify-content-between p-2 rounded-2 w-100 border-primary-subtle border-2" style="font-size: 13px;">
+          <div class="d-flex gap-5 ">
+            <div class="align-items-center d-flex gap-1">
+              <i class="far fa-user"></i>
+              <span>:</span>
+              <p class="text-blue-500">علی اکبر</p>
+            </div>
+            <div class="align-items-center d-flex gap-1">
+              <i class="far fa-clock"></i>
+              <span>:</span>
+              <p class="text-blue-500">امروز</p>
+            </div>
+            <div class="align-items-center d-flex gap-1">
+              <i class="far fa-eye"></i>
+              <span>:</span>
+              <p class="text-blue-500">5<span>نفر</span></p>
+            </div>
+            <div class="align-items-center d-flex gap-1">
+              <i class="fa fa-desktop"></i>
+              <span>:</span>
+              <p class="text-blue-500">سیستم سه</p>
+            </div>
+          </div>
+          <div>
+            <i class="bi bi-bookmark-plus"></i>
+          </div>
+        </div>
+        </div>
+      </div>
+      <div class="d-flex flex-column gap-3 text-9vw border border-2 border-primary-subtle rounded-4 p-2">
+        <p class="p-3 rounded-4">من سعی می کنم با استفاده از tidymodels یک مدل یادگیری ماشین را در RStudio تنظیم کنم. من مک بوک پرو 2019 دارم
+          2.3 گیگاهرتز 8 هسته ای اینتل Core  گیگابایت DDR4 با فرکانس 2667  تنظیم رگرسیون KNN، بیش از 10 ساعت طول می کشد، و من نمی دانم چرا. این هم کد:
+        </p>
+        <p class="bg-primary-subtle p-3 rounded-4">
+          knn_model - nearest_neighbor(neighbors = tune(), weight_func = tune(), dist_power = tune()) %>% set_engine('kknn') %>% set_mode('regression')  knn_grid - grid_regular( neighbors(), weight_func(), dist_power(), levels = c(20, 5, 5) )  knn_wf - workflow() %>% add_model(knn_model) %>% add_formula(demande_energetique_projectee ~ .)  knn_res - knn_wf %>% tune_grid( resamples = folds, grid = knn_grid, metrics = metric_set(rmse) ) knn_res
+        </p>
+        <p class=" p-3 rounded-4">
+          من حافظه اختصاص داده شده به rstudio را بررسی کردم. از 1.2 گیگابایت تجاوز نمی کند. اما چرا؟ چرا از تمام حافظه برای انجام سریع تنظیم هایپرپارامتر من استفاده نمی  از انجام تحقیقات، فایل .Renviron را در پوشه خانگی خود ایجاد کردم و آن را در داخل قرار دادم
+        </p>
+        <p class="bg-primary-subtle p-3 rounded-4">
+          R_MAX_VSIZE=16Gb
+        </p>
+        <p class=" p-3 rounded-4">
+          و RStudio را دوباره راه اندازی کرد، اما مشکل برطرف نشد. اینجا اطلاعاتی در مورد جلسه ارائه شده است
+        </p>
+       
+          <app-download-file></app-download-file>
+       
+        <div style="height: 2px;" class="bg-primary-200"></div>
+        <div>
+          <p class="fs-6 text-blue-600 mb-4">سوالات : </p>
+          <p class="pb-2">چگونه می توان تنظیم هایپرپارامترها را سریعتر انجام داد؟</p>
+          <p class="pb-2">چگونه مطمئن شویم که RStudio از نیمی از حافظه به جای مسدود کردن حداکثر 1.2 گیگابایت استفاده می کند؟</p>
+        </div>
+      </div>
+      <div class="align-items-center d-flex justify-content-between p-3">
+        <div class="d-flex gap-3 text-green-500 fs-6">
+          <i class="bi bi-chat-text " ></i>
+          <p>2 جواب</p>
+        </div>
+        <div class="align-items-center d-flex gap-3 rounded-2 text-blue-400" style="border: 1px solid;padding: 5px 20px;">
+          <i class="fa fa-filter"></i>
+          <p>فیلتر</p>
+        </div>
+      </div>
+      <div class="p-2 rounded-4" style="border: 2px solid #DFF6C9;">
+        <div class="d-flex justify-content-between p-3 bg-green-200 rounded-3 pe-4 ps-4 pt-2 pb-2">
+          <div  class="d-flex gap-5 text-1vw ">
+            <div class="align-items-center d-flex gap-2">
+              <i class="far fa-user "></i>
+              <p class="text-blue-500 text-green-800">سارا </p>
+            </div>
+            <div class="align-items-center d-flex gap-2">
+              <i class="far fa-clock"></i>
+              <p class="text-blue-500 text-green-800">امروز</p>
+            </div>
+          </div>
+          <div>
+              <i class="bi bi-bookmark-plus"></i>
+          </div>
+        </div>
+        <div class="d-flex">
+          <div class="pt-4">
+            <i class="bg-gray-100 fa fa-angle-up p-2 rounded-2" style="font-size: 10px;height: 27px;"></i>
+            <p class="text-1vw p-2">8</p>
+            <i class="bg-gray-100 fa fa-angle-down p-2 rounded-2" style="font-size: 10px;height: 27px;"></i>
+          </div>
+
+          <div>
+            <p class="p-3 text-9vw">زیر پاسخی نیست، اما آنچه را که برای آزمایش انجام دادم، از جمله کدی که برای آزمایش چاپ با استفاده از  (نسخه 2024.12.9) استفاده کردم، توضیح می‌دهد. یک برنامه Windows Forms جدید (NET 8)دانلود/نصب بسته NuGet: IronPDF (نسخه 2024.12.9)به نظر می رسد که این بسته از نسخه ای از System.Text.JSON استفاده می کند که به عنوان آسیب پذیر علامت گذاری شده است. در صورت استفاده از ویژوال استودیو، می توانید این بسته را به روز کنید. پس از دانلود/نصب بسته، مدیریت بسته NuGet را ببندید. سپس در Solution Explorer، روی خود کلیک راست کرده و Manage NuGet Packages را انتخاب کنید... بر روی زبانه Installed کلیک کنید. به System.Text.Json بروید و آن را انتخاب کنید. به نظر می رسد که نسخه 6.0.11 به عنوان آسیب پذیر علامت گذاری نشده است، بنابراین آن نسخه را انتخاب کنید و روی Update کلیک  دکمه به فرم اضافه کنید (نام: buttonTest) از کد زیر برای تست استفاده : مطمئن شوید که کلمه کلیدی async را به کنترل کننده رویداد Click اضافه کنید</p>
+            <p class="bg-green-200 p-3 text-9vw rounded-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam numquam dolorum atque? Neque amet soluta eos quas ea facere magni.</p>
+          </div>
+        </div>
+      </div>
+      <div class="bg-primary-subtle p-1 rounded-2 text-1vw">
+        <p>پاسخ شما</p>
+      </div>
+      <div class="border border-2 border-primary-subtle rounded-4 p-2 ps-4">
+        <div class="align-items-center d-flex gap-5 justify-content-end pb-3" style="border-bottom: 1px solid #cfe2ff;">
+          <i class="fa fa-rotate-right pointer text-body-tertiary"></i>
+          <i class="fa fa-rotate-back pointer text-body-tertiary"></i>
+          <i class="bi bi-code pointer text-body-tertiary"></i>
+          <i class="fa fa-paperclip pointer text-body-tertiary"></i>
+          <i class="fa fa-microphone pointer text-body-tertiary"></i>
+          <i class="fa fa-align-left pointer text-body-tertiary"></i>
+          <i class="fa fa-align-center pointer text-body-tertiary"></i>
+          <i class="fa fa-align-right pointer text-body-tertiary"></i>
+          <i class="fa fa-link pointer text-body-tertiary"></i>
+          <i class="fa fa-quote-left-alt pointer text-body-tertiary " style="transform: rotate(180deg);"></i>
+          <i class="fa fa-underline pointer text-body-tertiary"></i>
+          <i class="fa fa-italic pointer text-body-tertiary"></i>
+          <i class="fa fa-bold pointer text-body-tertiary"></i>
+        </div>
+        <input class="w-100 overflow-y-scroll "  type="text" placeholder="پاسخ شما..." style="height: 30vh;max-height: 30vh;border: none;">
+      </div>
+    <div class="w-100 d-flex  justify-content-end">
+      <div class="align-items-center bg-gray-100 d-flex gap-2 text-1vw text-blue-600 pt-2 pb-2 pe-3 ps-3 rounded-1">
+        <i class="fa fa-paper-plane"></i>
+        <p>ارسال جواب</p>
+      </div>
+    </div>
+    </section>
+</section>
+
