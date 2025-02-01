@@ -71,6 +71,14 @@ SelectedBreadCramp(event:string){
 
 }
 
+ChangeText(){
+  if(this.MODE_LIST=='NEW') return '100 سوال جدید'
+  if(this.MODE_LIST=='MOST_VIEW') return '100 سوال پربازدید'
+  if(this.MODE_LIST=='NO_ANSWER') return '100 سوال بدون پاسخ'
+  if(this.MODE_LIST=='OTHER') return 'سایر'
+  else return '100 سوال جدید'
+}
+
 AskingQuestion(){
   this.ModeQuestion.emit('newQuestion')
 }
