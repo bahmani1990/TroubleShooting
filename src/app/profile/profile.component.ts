@@ -29,9 +29,9 @@ ngOnInit(): void {
 }
 
 ChangeMode(){
-  this.MODE_MAIN.emit('QUESTIONS')
+ this.MODE_MAIN.emit('QUESTIONS')
  this.notifiService.ToggleSubject()
-  this.notifiService.BreadCrampPage(['پروفایل','سوال جدید'])
+ this.notifiService.BreadCrampPage(['برچسب','سوال جدید'])
 }
 
 // BackToComponent(event:any){

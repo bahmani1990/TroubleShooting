@@ -73,7 +73,7 @@
             </div>
    
             <div class="h-100" [class.hide]="MODE!='TAGS'">
-                <app-tags></app-tags>
+                <app-tags (MODE_MAIN)="ChangeComponent($event)"></app-tags>
             </div>
         </div>
     </div>

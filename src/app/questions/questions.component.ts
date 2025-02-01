@@ -68,6 +68,11 @@ SelectedBreadCramp(event:string){
     this.MODE_MAIN.emit('PROFILE')
     
   }
+  if(event=='برچسب'){
+    this.ModeQuestion.emit('NotNewQuestion')
+    this.MODE_MAIN.emit('TAGS')
+    
+  }
 
 }
 
