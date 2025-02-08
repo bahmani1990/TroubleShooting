@@ -26,7 +26,7 @@
                             <span class="input-group-text" id="basic-addon1"><img src="assets/icons/vector.svg" class="icon"></span>
                             <input type="text" class="form-control h-100"  aria-label="Username" aria-describedby="basic-addon1">
                         </div>
-                        <a class="text-start text-success" style="font-size: 14px;" (click)="MODE='SENDCODING'">فراموشی رمز عبور</a>
+                        <a class="text-start text-success pointer" style="font-size: 14px;" (click)="MODE='SENDCODING'">فراموشی رمز عبور</a>
                     </div>
                     
                     </div>
@@ -100,7 +100,7 @@
                 <!-- <button *ngIf="MODE=='AGREEMENTCODE' " type="button" class="btn btn-primary btn-lg btn-block" style="font-size: 1.5vw;"><a>ورود</a></button> -->
                 <button *ngIf="MODE=='REGISTERY'" type="button" class="btn btn-primary btn-lg btn-block" style="font-size: 1.2vw;">ثبت نام</button>
             </div>
-            <a *ngIf="MODE=='ENTER' || MODE=='REGISTERY' " [ngClass]="MODE=='ENTER'?['text-center','text-danger'] : ['text-7rem' ,'text-black' ,'text-center']" [style]="MODE=='ENTER' ? {'font-size': '1vw'}:{'font-size': '0.6vw'}" (click)="MODE='REGISTERY'">{{MODE=='ENTER' ? 'ثبت نام در  سایت' :' ورود و عضویت شما به منزله پذیرفتن قوانین و مقررات می باشد' }}</a>
+            <a *ngIf="MODE=='ENTER' || MODE=='REGISTERY' " [ngClass]="MODE=='ENTER'?['text-center','text-danger','pointer'] : ['text-7rem' ,'text-black' ,'text-center']" [style]="MODE=='ENTER' ? {'font-size': '1vw'}:{'font-size': '0.6vw'}" (click)="MODE='REGISTERY'">{{MODE=='ENTER' ? 'ثبت نام در  سایت' :' ورود و عضویت شما به منزله پذیرفتن قوانین و مقررات می باشد' }}</a>
             </div>
         </div>
         <!-- Left Side -->

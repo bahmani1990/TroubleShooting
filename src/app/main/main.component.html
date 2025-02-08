@@ -29,7 +29,7 @@
     </div>
     <div class="h-100 main border-top w-100 d-flex">
         <ul  *ngIf="modeQuestion=='NotNewQuestion'" style="width: 15%;padding: 15px 5px;" class="main-right border-start h-100 d-flex flex-column p-2">
-            <li  [class]="MODE=='QUESTIONS' ? 'text-white':'text-gray-400'" class="d-flex gap-2 p-2 align-items-center mb-2"  [class.hsp_selected]="MODE=='QUESTIONS'" (click)="MODE='QUESTIONS'">
+            <li  [class]="MODE=='QUESTIONS' ? 'text-white':'text-gray-400'" class="d-flex gap-2 p-2 align-items-center mb-2"  [class.hsp_selected]="MODE=='QUESTIONS'" (click)="MODE='QUESTIONS';openProfile=false">
                 <i  class="fa fa-question-circle"></i>
                 <p style="font-size: 1.2vw;">سوالات</p>
             </li>
@@ -47,7 +47,7 @@
                 <li [class.text-primary]="MODE_PROFILE=='SAVES'"  (click)="MODE_PROFILE='SAVES'"><span>ذخیره ها</span></li>
                 <li [class.text-primary]="MODE_PROFILE=='SITTING'" (click)="MODE_PROFILE='SITTING'"><span>تنظیمات</span></li>
             </ul>
-            <li [class]="MODE=='TAGS' ? 'text-white':'text-gray-400'" class="d-flex gap-2 p-2 align-items-center" [class.hsp_selected]="MODE=='TAGS'" (click)="MODE='TAGS'">
+            <li [class]="MODE=='TAGS' ? 'text-white':'text-gray-400'" class="d-flex gap-2 p-2 align-items-center" [class.hsp_selected]="MODE=='TAGS'" (click)="MODE='TAGS';openProfile=false">
                 <i  class="fa fa-tags"></i>
                 <p style="font-size: 1.2vw;">برچسب ها</p>
             </li>

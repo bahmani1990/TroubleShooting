@@ -1,8 +1,7 @@
 <section class="h-100">
-    <!-- <app-bread-cramp [pageName]="pageNames" (EventPageName)="BackToComponent($event)"></app-bread-cramp> -->
     <section [class.hide]="MODE_PROFILE!='MY_QUESTIONS'"  class="d-flex flex-column gap-4 h-100">
         <div class="d-flex justify-content-between">
-            <div class="align-items-center d-flex gap-2" (click)="ChangeMode()">
+            <div class="align-items-center d-flex gap-2" >
                 <img src="/assets/icons/question-transparent.svg" class="vw-1" alt="" srcset="">
                 <p  style="font-size: 1.1vw;color: #1E429F;">  سوالات من</p>
               </div>
@@ -12,7 +11,7 @@
             </div>
             <button class="align-items-center btn btn-primary d-flex gap-2" style="background-color: #1E429F;width: 10vw;">
               <i class="fa fa-question-circle text-light"></i>
-              <span class="text-nowrap" style="font-size: 0.9vw;" (click)="ChangeMode()" >سوالت رو بپرس</span>
+              <span class="text-nowrap" style="font-size: 0.9vw;" (click)="ChangeMode('سوالات من')" >سوالت رو بپرس</span>
           </button>
         </div>
         <!-- <ng-container [ngTemplateOutlet]="NO_QUESTION"></ng-container> -->
@@ -68,7 +67,7 @@
             <input class="search form-control" type="text" placeholder="جستجو">
           </div>
           <div>
-            <button class="align-items-center btn btn-primary d-flex gap-2" style="background-color: #1E429F;width: 10vw;" (click)="ChangeMode()">
+            <button class="align-items-center btn btn-primary d-flex gap-2" style="background-color: #1E429F;width: 10vw;" (click)="ChangeMode('ذخیره ها')">
                 <i class="fa fa-question-circle text-light"></i>
                 <span class="text-nowrap" style="font-size: 0.9vw;" >سوالت رو بپرس</span>
             </button>

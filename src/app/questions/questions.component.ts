@@ -59,22 +59,26 @@ NewQuestion(){
 
 SelectedBreadCramp(event:string){
   if(event=='سوالات') {
-    this.MODE='COMPONENT_QUESTION'
     this.ModeQuestion.emit('NotNewQuestion')
+    this.MODE='COMPONENT_QUESTION'
+    this.MODE_MAIN.emit('QUESTIONS')
   }
   
-  if(event=='پروفایل'){
+  if(event=='ذخیره ها' || event=='سوالات من' || event=='تنظیمات' ){
     this.ModeQuestion.emit('NotNewQuestion')
     this.MODE_MAIN.emit('PROFILE')
+    this.MODE='COMPONENT_QUESTION'
     
   }
   if(event=='برچسب'){
     this.ModeQuestion.emit('NotNewQuestion')
     this.MODE_MAIN.emit('TAGS')
+    this.MODE='COMPONENT_QUESTION'
     
   }
 
 }
+
 
 ChangeText(){
   if(this.MODE_LIST=='NEW') return '100 سوال جدید'

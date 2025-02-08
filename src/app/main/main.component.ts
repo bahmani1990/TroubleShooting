@@ -26,6 +26,7 @@ public openProfile :boolean=false
 
 
 ChangeComponent(event:any){
+  debugger
   this.MODE=event
 }
 

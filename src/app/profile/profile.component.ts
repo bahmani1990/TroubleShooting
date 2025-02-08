@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
 import { NotificationService } from '../services/notification.service';
-import { BreadCrampComponent } from "../bread-cramp/bread-cramp.component";
+
 
 @Component({
   selector: 'app-profile',
@@ -25,13 +25,14 @@ public SAVE_QUESTION:boolean=false
 
 
 ngOnInit(): void {
-  this.pageNames=['پروفایل','سوال جدید']
+  // this.pageNames=['پروفایل','سوال جدید']
 }
 
-ChangeMode(){
+ChangeMode(text?:string){
+  debugger
  this.MODE_MAIN.emit('QUESTIONS')
  this.notifiService.ToggleSubject()
- this.notifiService.BreadCrampPage(['برچسب','سوال جدید'])
+ this.notifiService.BreadCrampPage([`${text}`,'سوال جدید'])
 }
 
 // BackToComponent(event:any){

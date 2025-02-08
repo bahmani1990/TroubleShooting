@@ -22,7 +22,7 @@ export class TagsComponent implements OnInit{
   public pageNames:string[]=[]
   
   ngOnInit(): void {
-    this.pageNames=['برچسب','سوال جدید']
+    // this.pageNames=['برچسب','سوال جدید']
   }
   ChangeMode(){
     this.MODE_MAIN.emit('QUESTIONS')

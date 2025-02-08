@@ -23,11 +23,13 @@ export class BreadCrampComponent implements OnInit{
   
 
   ngOnInit(): void {
+    debugger
     this.pageName=this.notService.namesPage
     
   }
 
   BreadCrampClicked(value:string){
+    debugger
     this.EventPageName.emit(value)
   }
 
