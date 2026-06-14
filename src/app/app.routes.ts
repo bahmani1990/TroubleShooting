@@ -1,11 +1,10 @@
 import { Routes } from '@angular/router';
-import { LoginComponent } from './login/login.component';
-import { QuestionsComponent } from './questions/questions.component';
-import { ProfileComponent } from './profile/profile.component';
-import { TagsComponent } from './tags/tags.component';
-import { MainComponent } from './main/main.component';
-import { UploadFileComponent } from './upload-file/upload-file.component';
-import { SimpleComponent } from './simple/simple.component';
+
+import { QuestionsComponent } from './layout/main/questions/questions.component';
+import { ProfileComponent } from './layout/main/profile/profile.component';
+import { TagsComponent } from './layout/main/tags/tags.component';
+import { MainComponent } from './layout/main/main.component';
+import { LoginComponent } from './layout/login/login.component';
 
 export const routes: Routes = [
     {path:'',component:LoginComponent},
