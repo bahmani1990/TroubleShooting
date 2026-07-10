@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+
 import { Component, ElementRef, EventEmitter, inject, OnDestroy, OnInit, Output, ViewChild } from '@angular/core';
 import { UploadFileComponent } from "../../../shared/components/upload-file/upload-file.component";
 import { UtilityService } from '../../../core/services/utility.service';
@@ -11,7 +11,7 @@ import { SimpleComponent } from '../../../shared/components/simple/simple.compon
 
 @Component({
     selector: 'app-questions',
-    imports: [CommonModule, UploadFileComponent, SimpleComponent, RouterOutlet, BreadCrampComponent, DownloadFileComponent],
+    imports: [UploadFileComponent, SimpleComponent, RouterOutlet, BreadCrampComponent, DownloadFileComponent],
     templateUrl: './questions.component.html',
     styleUrl: './questions.component.css'
 })

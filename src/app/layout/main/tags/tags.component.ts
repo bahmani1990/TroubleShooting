@@ -1,10 +1,10 @@
-import { CommonModule } from '@angular/common';
+
 import { Component, EventEmitter, inject, OnInit, Output } from '@angular/core';
 import { UtilityService } from '../../../core/services/utility.service';
 
 @Component({
     selector: 'app-tags',
-    imports: [CommonModule],
+    imports: [],
     templateUrl: './tags.component.html'
 })
 export class TagsComponent implements OnInit{
