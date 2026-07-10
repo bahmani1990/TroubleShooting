@@ -7,10 +7,9 @@ import { NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 @Component({
-  selector: 'app-main',
-  standalone: true,
-  imports: [CommonModule, ProfileComponent, QuestionsComponent, TagsComponent, NgbDropdownModule],
-  templateUrl: './main.component.html',
+    selector: 'app-main',
+    imports: [CommonModule, ProfileComponent, QuestionsComponent, TagsComponent, NgbDropdownModule],
+    templateUrl: './main.component.html'
 })
 export class MainComponent {
 

@@ -1,10 +1,9 @@
 import { Component, ElementRef, inject, input, Input, Renderer2, ViewChild } from '@angular/core';
 
 @Component({
-  selector: 'app-upload-file',
-  standalone: true,
-  imports: [],
-  templateUrl: './upload-file.component.html',
+    selector: 'app-upload-file',
+    imports: [],
+    templateUrl: './upload-file.component.html'
 })
 export class UploadFileComponent {
 

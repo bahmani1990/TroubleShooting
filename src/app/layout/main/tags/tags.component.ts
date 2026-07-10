@@ -3,10 +3,9 @@ import { Component, EventEmitter, inject, OnInit, Output } from '@angular/core';
 import { UtilityService } from '../../../core/services/utility.service';
 
 @Component({
-  selector: 'app-tags',
-  standalone: true,
-  imports: [CommonModule],
-  templateUrl: './tags.component.html',
+    selector: 'app-tags',
+    imports: [CommonModule],
+    templateUrl: './tags.component.html'
 })
 export class TagsComponent implements OnInit{
 

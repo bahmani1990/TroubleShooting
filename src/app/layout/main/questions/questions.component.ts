@@ -10,11 +10,10 @@ import { Subscription } from 'rxjs';
 import { SimpleComponent } from '../../../shared/components/simple/simple.component';
 
 @Component({
-  selector: 'app-questions',
-  standalone: true,
-  imports: [CommonModule, UploadFileComponent, SimpleComponent, RouterOutlet, BreadCrampComponent, DownloadFileComponent],
-  templateUrl: './questions.component.html',
-  styleUrl: './questions.component.css'
+    selector: 'app-questions',
+    imports: [CommonModule, UploadFileComponent, SimpleComponent, RouterOutlet, BreadCrampComponent, DownloadFileComponent],
+    templateUrl: './questions.component.html',
+    styleUrl: './questions.component.css'
 })
 export class QuestionsComponent implements OnInit, OnDestroy{
 

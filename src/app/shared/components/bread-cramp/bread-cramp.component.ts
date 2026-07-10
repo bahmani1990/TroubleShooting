@@ -4,10 +4,9 @@ import { UtilityService } from '../../../core/services/utility.service';
 
 
 @Component({
-  selector: 'app-bread-cramp',
-  standalone: true,
-  imports: [CommonModule],
-  templateUrl: './bread-cramp.component.html',
+    selector: 'app-bread-cramp',
+    imports: [CommonModule],
+    templateUrl: './bread-cramp.component.html'
 })
 export class BreadCrampComponent implements OnInit{
 

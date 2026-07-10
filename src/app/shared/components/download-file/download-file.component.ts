@@ -1,10 +1,9 @@
 import { Component, ElementRef, inject, Input, Renderer2, ViewChild } from '@angular/core';
 
 @Component({
-  selector: 'app-download-file',
-  standalone: true,
-  imports: [],
-  templateUrl: './download-file.component.html',
+    selector: 'app-download-file',
+    imports: [],
+    templateUrl: './download-file.component.html'
 })
 export class DownloadFileComponent {
 

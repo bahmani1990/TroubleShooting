@@ -4,10 +4,9 @@ import { UtilityService } from '../../../core/services/utility.service';
 
 
 @Component({
-  selector: 'app-profile',
-  standalone: true,
-  imports: [CommonModule],
-  templateUrl: './profile.component.html',
+    selector: 'app-profile',
+    imports: [CommonModule],
+    templateUrl: './profile.component.html'
 })
 export class ProfileComponent implements OnInit{
 
