@@ -1,13 +1,12 @@
-import { CommonModule } from '@angular/common';
+
 import { Component, EventEmitter, inject, OnInit, Output } from '@angular/core';
 import { UtilityService } from '../../../core/services/utility.service';
 
 
 @Component({
-  selector: 'app-bread-cramp',
-  standalone: true,
-  imports: [CommonModule],
-  templateUrl: './bread-cramp.component.html',
+    selector: 'app-bread-cramp',
+    imports: [],
+    templateUrl: './bread-cramp.component.html'
 })
 export class BreadCrampComponent implements OnInit{
 

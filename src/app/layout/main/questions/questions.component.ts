@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+
 import { Component, ElementRef, EventEmitter, inject, OnDestroy, OnInit, Output, ViewChild } from '@angular/core';
 import { UploadFileComponent } from "../../../shared/components/upload-file/upload-file.component";
 import { UtilityService } from '../../../core/services/utility.service';
@@ -10,11 +10,10 @@ import { Subscription } from 'rxjs';
 import { SimpleComponent } from '../../../shared/components/simple/simple.component';
 
 @Component({
-  selector: 'app-questions',
-  standalone: true,
-  imports: [CommonModule, UploadFileComponent, SimpleComponent, RouterOutlet, BreadCrampComponent, DownloadFileComponent],
-  templateUrl: './questions.component.html',
-  styleUrl: './questions.component.css'
+    selector: 'app-questions',
+    imports: [UploadFileComponent, SimpleComponent, RouterOutlet, BreadCrampComponent, DownloadFileComponent],
+    templateUrl: './questions.component.html',
+    styleUrl: './questions.component.css'
 })
 export class QuestionsComponent implements OnInit, OnDestroy{
 

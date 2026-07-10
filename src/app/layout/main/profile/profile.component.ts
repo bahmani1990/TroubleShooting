@@ -1,13 +1,12 @@
-import { CommonModule } from '@angular/common';
+
 import { Component, EventEmitter, inject, Input, OnInit, Output, ViewChild } from '@angular/core';
 import { UtilityService } from '../../../core/services/utility.service';
 
 
 @Component({
-  selector: 'app-profile',
-  standalone: true,
-  imports: [CommonModule],
-  templateUrl: './profile.component.html',
+    selector: 'app-profile',
+    imports: [],
+    templateUrl: './profile.component.html'
 })
 export class ProfileComponent implements OnInit{
 
